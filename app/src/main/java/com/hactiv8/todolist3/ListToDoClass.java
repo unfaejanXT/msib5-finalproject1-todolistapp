@@ -4,6 +4,20 @@ public class ListToDoClass {
     int idListToDo;
     String nameListToDo;
 
+    public ListToDoClass() {
+        super();
+    }
+
+    public ListToDoClass(int mIdListToDo, String mNameListToDo){
+        super();
+        this.idListToDo = mIdListToDo;
+        this.nameListToDo = mNameListToDo;
+    }
+
+    public ListToDoClass(String mNameListToDo){
+        this.nameListToDo = mNameListToDo;
+    }
+
     public int getIdListToDo() {
         return idListToDo;
     }
