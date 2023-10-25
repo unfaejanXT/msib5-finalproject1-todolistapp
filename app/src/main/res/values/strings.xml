@@ -48,4 +48,6 @@
     <string name="desc_button_add2">add button 2</string>
     <string name="desc_picture">illustrator picture of note</string>
     <string name="title">Welcome To Note Notion</string>
+    <string name="input_note">Input Note</string>
+    <string name="simpan_button">Simpan</string>
 </resources>
