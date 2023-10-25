@@ -41,6 +41,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
+                    android:paddingStart="4dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -57,20 +58,12 @@
 
                     <TextView
                         android:id="@+id/textView4"
+
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="@string/desc_title"
                         android:textColor="@color/white" />
-
-                    <ImageButton
-                        android:id="@+id/imageButton"
-                        android:layout_width="100sp"
-                        android:layout_height="49sp"
-                        android:layout_weight="1"
-                        android:background="@null"
-                        android:contentDescription="@string/desc_image_button_add"
-                        android:src="@drawable/add_button" />
 
                 </LinearLayout>
 
@@ -85,7 +78,6 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:id="@+id/imageView3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/book_list"
@@ -102,6 +94,7 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="25sp"
@@ -114,7 +107,7 @@
     </androidx.recyclerview.widget.RecyclerView>
 
     <ImageButton
-        android:id="@+id/imageButton2"
+        android:id="@+id/btnTambah"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="10dp"

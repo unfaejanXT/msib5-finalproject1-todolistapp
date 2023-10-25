@@ -13,17 +13,17 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class ListTodoAdapter extends RecyclerView.Adapter<ListTodoAdapter.ListViewHolder> {
-    private List<ListToDoClass> todolist;
+    private List<ListToDoClass> todoList;
     private Context context;
 
     public ListTodoAdapter(Context context,List<ListToDoClass> todolist){
         this.context = context;
-        this.todolist = todolist;
+        this.todoList = todolist;
     }
 
     public ListTodoAdapter(Context context,List<ListToDoClass> todolist, hapusKegiatanListener hapusListener){
         this.context = context;
-        this.todolist = todolist;
+        this.todoList = todolist;
         this.hapusListener = hapusListener;
     }
 
@@ -37,7 +37,8 @@ public class ListTodoAdapter extends RecyclerView.Adapter<ListTodoAdapter.ListVi
 
     @Override
     public void onBindViewHolder(@NonNull ListTodoAdapter.ListViewHolder holder, int position) {
-
+        ListToDoClass todolist = todoList.get(position);
+        holder.mtvNamaKegiatan.setText(todolist.getNameListToDo());
     }
 
     @Override
