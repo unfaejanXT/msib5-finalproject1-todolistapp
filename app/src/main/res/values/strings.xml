@@ -43,4 +43,9 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
+    <string name="desc_image_button_add">add button 1</string>
+    <string name="desc_title">It is a long established fact that a reader will be distracted</string>
+    <string name="desc_button_add2">add button 2</string>
+    <string name="desc_picture">illustrator picture of note</string>
+    <string name="title">Welcome To Note Notion</string>
 </resources>
