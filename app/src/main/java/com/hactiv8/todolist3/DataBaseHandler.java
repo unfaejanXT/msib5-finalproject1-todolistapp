@@ -1,5 +1,6 @@
 package com.hactiv8.todolist3;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
@@ -74,7 +75,7 @@ public class DataBaseHandler extends SQLiteOpenHelper {
 
         String query = " SELECT * FROM " +TABLE_ListToDo;
         SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery(query, null);
+        @SuppressLint("Recycle") Cursor cursor = db.rawQuery(query, null);
 
         if (cursor.moveToFirst()) {
             do {

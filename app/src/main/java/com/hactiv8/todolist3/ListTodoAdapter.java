@@ -1,6 +1,5 @@
 package com.hactiv8.todolist3;
 
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,18 +12,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 public class ListTodoAdapter extends RecyclerView.Adapter<ListTodoAdapter.ListViewHolder> {
-    private List<ListToDoClass> todoList;
-    private Context context;
+    private final List<ListToDoClass> todoList;
 
-    public ListTodoAdapter(Context context,List<ListToDoClass> todolist){
-        this.context = context;
-        this.todoList = todolist;
-    }
-
-    public ListTodoAdapter(Context context,List<ListToDoClass> todolist, hapusKegiatanListener hapusListener){
-        this.context = context;
+    public ListTodoAdapter(List<ListToDoClass> todolist, KegiatanListener hapusListener, KegiatanListener ubahListener){
         this.todoList = todolist;
         this.hapusListener = hapusListener;
+        this.ubahListener = ubahListener;
     }
 
 
@@ -43,36 +36,33 @@ public class ListTodoAdapter extends RecyclerView.Adapter<ListTodoAdapter.ListVi
 
     @Override
     public int getItemCount() {
-        return 0;
+        return todoList.size();
     }
 
     public class ListViewHolder extends RecyclerView.ViewHolder {
-        private TextView mtvNamaKegiatan;
-        private ImageButton mbtnHapusKegiatan;
-        private ImageButton mbtnUbahKegiatan;
+        private final TextView mtvNamaKegiatan;
 
         public ListViewHolder(@NonNull View itemView) {
             super(itemView);
 
             mtvNamaKegiatan = itemView.findViewById(R.id.tvNamaKegiatan);
-            mbtnUbahKegiatan = itemView.findViewById(R.id.btnUbahKegiatan);
-            mbtnHapusKegiatan = itemView.findViewById(R.id.btnHapuskegiatan);
+            ImageButton mbtnUbahKegiatan = itemView.findViewById(R.id.btnUbahKegiatan);
+            ImageButton mbtnHapusKegiatan = itemView.findViewById(R.id.btnHapuskegiatan);
 
-            mbtnUbahKegiatan.setOnClickListener(v -> {
+            mbtnUbahKegiatan.setOnClickListener(v -> ubahListener.onUbahKegiatan(getAdapterPosition()));
 
-            });
-
-            mbtnHapusKegiatan.setOnClickListener(v -> {
-                hapusListener.onHapusKegiatan(getAdapterPosition());
-            });
+            mbtnHapusKegiatan.setOnClickListener(v -> hapusListener.onHapusKegiatan(getAdapterPosition()));
 
 
         }
     }
 
-    public interface hapusKegiatanListener{
+    public interface KegiatanListener{
         void onHapusKegiatan(int position);
+        void onUbahKegiatan(int position);
     }
 
-    private hapusKegiatanListener hapusListener;
+
+    private final KegiatanListener hapusListener;
+    private final KegiatanListener ubahListener;
 }
