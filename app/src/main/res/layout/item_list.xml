@@ -16,22 +16,22 @@
 
         <LinearLayout
             android:id="@+id/linearLayout"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:orientation="vertical"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/linearLayout2"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
                 android:id="@+id/tvNamaKegiatan"
-                android:layout_width="250dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15sp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                />
+                android:textColor="#666666"/>
         </LinearLayout>
 
         <LinearLayout

@@ -95,6 +95,7 @@ public class MainActivity extends AppCompatActivity implements ListTodoAdapter.K
     public void onHapusKegiatan(int position) {
         ListToDoClass selectedHapus = todolist.get(position);
         db.DeleteListToDo(selectedHapus);
+        Toast.makeText(this, "Catatan Berhasil Dihapus", Toast.LENGTH_SHORT).show();
         loadData();
     }
 

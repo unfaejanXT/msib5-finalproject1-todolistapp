@@ -5,6 +5,7 @@
     android:layout_height="wrap_content"
     android:padding="20sp">
 
+
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/etNote"
         android:layout_width="match_parent"
@@ -18,6 +19,7 @@
         android:id="@+id/save_data"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
         android:text="Save"/>
 
 </LinearLayout>
